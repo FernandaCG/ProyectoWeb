@@ -16,7 +16,7 @@ public class Pruebas {
 
         UsuarioDAO usuarioDAO = new UsuarioDAO();
         //usuarioDAO.crearUsuario(fernanda);
-        System.out.println(usuarioDAO.consultarUsuarios());
+//        System.out.println(usuarioDAO.consultarUsuarios());
 
 //        ConexionDatos conexionDatos = new ConexionDatos();
 //        conexionDatos.LoginBean("C:/Users/campos04/Documents/NetBeansProjects/ProyectoFinal/src/conf/");

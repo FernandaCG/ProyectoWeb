@@ -2,9 +2,17 @@ package com.ipn.dao;
 
 import com.ipn.conexion.ConexionDatos;
 import com.ipn.modelo.Usuario;
+import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import org.jdom.Element;
+import org.jdom.JDOMException;
 
 public class UsuarioDAO implements IUsuarioDAO {
+
+    HashMap<String, String> mapaUsuarios = new HashMap();
 
     @Override
     public void crearUsuario(Usuario usuario) {
@@ -13,8 +21,27 @@ public class UsuarioDAO implements IUsuarioDAO {
 
     @Override
     public HashMap<String, String> consultarUsuarios() {
-        ConexionDatos conexionDatos = new ConexionDatos();
-        return conexionDatos.LoginBean("../ProyectoFinal/src/conf/");
+        ConexionDatos cd = new ConexionDatos();
+        Element raiz;
+        try {
+            raiz = cd.Conectar("C:/Users/campos04/Documents/NetBeansProjects/ProyectoFinal/src/conf/");
+            List hUsuario = raiz.getChildren("usuario");
+
+            for (int i = 0; i < hUsuario.size(); i++) {
+                Element elemento = (Element) hUsuario.get(i);
+                String cadena = elemento.getAttributeValue("nombre");
+                String pass = elemento.getAttributeValue("password");
+                String rol = elemento.getAttributeValue("rol");
+//                System.out.println(cadena + " " + pass + " " + rol);
+                mapaUsuarios.put(cadena, pass);
+            }
+            System.out.println("Mapa de usuarios " + mapaUsuarios);
+
+        } catch (JDOMException | IOException ex ) {
+            Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return mapaUsuarios;
     }
 
     @Override

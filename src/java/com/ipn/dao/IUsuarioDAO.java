@@ -2,6 +2,7 @@ package com.ipn.dao;
 
 import com.ipn.modelo.Usuario;
 import java.util.HashMap;
+import org.jdom.Element;
 
 public interface IUsuarioDAO {
 

@@ -11,32 +11,14 @@ import org.jdom.input.SAXBuilder;
 
 public class ConexionDatos {
 
-    HashMap<String, String> mapaUsuarios = new HashMap();
+    public Element Conectar(String ruta) throws JDOMException, IOException {
 
-    public HashMap<String, String> LoginBean(String ruta) {
-        try {
-            SAXBuilder builder = new SAXBuilder();
-            File archivoXML = new File(ruta + "archivoXML.xml");
-            Document documento = builder.build(archivoXML);
-            Element raiz = documento.getRootElement();
-        
-            List hUsuario = raiz.getChildren("usuario");
-//            System.out.println(raiz);
-//            System.out.println(hUsuario);
-            for (int i = 0; i < hUsuario.size(); i++) {
-                Element elemento = (Element) hUsuario.get(i);
-                String cadena = elemento.getAttributeValue("nombre");
-                String pass = elemento.getAttributeValue("password");
-                String rol = elemento.getAttributeValue("rol");
-//                System.out.println(cadena + " " + pass + " " + rol);
-                mapaUsuarios.put(cadena, pass);
-            }
-            System.out.println("Mapa de usuarios "+ mapaUsuarios);
-        } catch (JDOMException | IOException e) {
-            e.getMessage();
-        }
-        return mapaUsuarios;
+        SAXBuilder builder = new SAXBuilder();
+        File archivoXML = new File(ruta + "archivoXML.xml");
+        Document documento = builder.build(archivoXML);
+        Element raiz = documento.getRootElement();
+
+        return raiz;
     }
-    
 
 }
