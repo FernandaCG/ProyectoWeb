@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<USUARIOS>
+    <usuario id="1" password="host" nombre="Fernanda" correo="ficg@hotmail.com" rol="administrador">Fernanda</usuario>
+    <usuario id="2" password="pass" nombre="Mario" correo="lvmj@hotmail.com" rol="profesor">Mario</usuario>
+    <usuario id="3" password="pass" nombre="Cesar" correo="cehl@hotmail.com" rol="profesor">Cesar</usuario>
+</USUARIOS>
+

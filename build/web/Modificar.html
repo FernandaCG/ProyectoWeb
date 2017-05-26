@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!--Se traen cada uno de los campos de la base de datos, de acuerdo al id del usuario, y se modifica el documento xml-->
+<!--Agregar, sin llenar campos-->
+<html>
+    <head>
+        <title>Modificar</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            <form action="Servletdemodificar" method="post">
+                <span>ID </span>
+                <input type="text" name="id"> <br>
+                <span>Nombre</span>
+                <input type="text" name="nombre"> <br>
+                <span>Password </span>
+                <input type="text" name="pss"> <br>
+                <span>Correo </span>
+                <input type="text" name="correo"> <br>
+                <span>Rol </span>
+                <select name="rol">
+                        <option>Administrador</option>
+                        <option>Profesor</option>
+                </select>  
+            </form>
+        </div>
+    </body>
+</html>
