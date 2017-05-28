@@ -17,7 +17,6 @@ public class ConexionDatos {
         File archivoXML = new File(ruta + "archivoXML.xml");
         Document documento = builder.build(archivoXML);
         Element raiz = documento.getRootElement();
-
         return raiz;
     }
 

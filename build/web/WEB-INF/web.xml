@@ -4,9 +4,41 @@
         <servlet-name>Triangulos</servlet-name>
         <servlet-class>com.ipn.controlador.Triangulos</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Fail</servlet-name>
+        <servlet-class>com.ipn.controlador.Fail</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Mostrar</servlet-name>
+        <servlet-class>com.ipn.controlador.Mostrar</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Administrador</servlet-name>
+        <servlet-class>com.ipn.controlador.Administrador</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Profesor</servlet-name>
+        <servlet-class>com.ipn.controlador.Profesor</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Triangulos</servlet-name>
         <url-pattern>/Triangulos</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Fail</servlet-name>
+        <url-pattern>/Fail</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Mostrar</servlet-name>
+        <url-pattern>/Mostrar</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Administrador</servlet-name>
+        <url-pattern>/Administrador</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Profesor</servlet-name>
+        <url-pattern>/Profesor</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
